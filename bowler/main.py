@@ -15,12 +15,12 @@ from .types import START, SYMBOL, TOKEN
 
 @click.group(invoke_without_command=True)
 @click.option("--debug/--quiet", default=False, help="Logging output level")
-@click.option("--version", "-V", is_flag=True, help="Print version string and exit")
+@click.option("--version", "-V", is_flag=True, help="SADIE Print version string and exit")
 @click.pass_context
 def main(ctx: click.Context, debug: bool, version: bool) -> None:
     """Safe Python code modification and refactoring."""
     if version:
-        from python.bowler import __version__
+        from bowler import __version__
 
         click.echo(f"bowler {__version__}")
         return
